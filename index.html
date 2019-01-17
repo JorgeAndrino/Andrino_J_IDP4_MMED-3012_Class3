@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
+</head>
+<body>
+    <main>
+        <h2>User Data for My App</h2>
+        <hr>
+        <article>
+            <h4 class="hidden"></h4>
+            <h5>sumpin sumpin</h5>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, incidunt dolor. Quasi numquam pariatur sapiente aspernatur perspiciatis, qui at ea impedit doloribus beatae, laboriosam reiciendis quia! Laborum dolores veniam natus!
+            </p>
+            <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, incidunt dolor. Quasi numquam pariatur sapiente aspernatur perspiciatis, qui at ea impedit doloribus beatae, laboriosam reiciendis quia! Laborum dolores veniam natus!
+            </p>
+        </article>
+        <div id="app">
+            <activeusers name="George" role="Conquer the world" @shoutup="calledOnParent">
+                <h4>Active User Data:</h4>
+            </activeusers>
+
+            <activeusers name="Kiera" role="Boss George around">
+                    <h4>Active User Data:</h4>
+                </activeusers>
+        </div>
+    </main>
+    <!-- component templates -->
+    <template id="usertemplate">
+        <div>
+            <slot></slot>
+            <p>{{ name }}</p>
+            <p>{{ role }}</p>
+            <hr>
+            <button v-on:click="logFromChild">Clickety Click</button>
+            <button v-on:click="passEvent">Run a main viewmodel function</button>
+        </div>
+    </template>
+    <script src="js/main.js"></script>
+</body>
+</html>
